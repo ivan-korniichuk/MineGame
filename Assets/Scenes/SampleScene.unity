@@ -864,12 +864,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventory:
   - _label: MinerV1
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: 92d01a55ad01ce140983af5432e7dd91, type: 3}
     _gameObject: {fileID: 6498545981494642302, guid: e0b4fd5234b524c4ebb570ef20074361, type: 3}
     _id: 11
     _count: 3
   - _label: MinerV2
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: a08ae0f795742b84cae2a2bb66826169, type: 3}
     _gameObject: {fileID: 4868200485723428038, guid: b627338dc16a3e447a7dfd420d7c4b62, type: 3}
     _id: 12
     _count: 3
@@ -3002,12 +3002,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deffaultItemsFromInspector:
   - _label: MinerV1
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: 92d01a55ad01ce140983af5432e7dd91, type: 3}
     _gameObject: {fileID: 6498545981494642302, guid: e0b4fd5234b524c4ebb570ef20074361, type: 3}
     _id: 11
     _count: 1
   - _label: MinerV2
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: a08ae0f795742b84cae2a2bb66826169, type: 3}
     _gameObject: {fileID: 4868200485723428038, guid: b627338dc16a3e447a7dfd420d7c4b62, type: 3}
     _id: 12
     _count: 1
@@ -4100,7 +4100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.02214815, y: 0.105000004}
   m_AnchorMax: {x: 0.20822223, y: 0.3834632}
-  m_AnchoredPosition: {x: 0.38000488, y: 0.20007324}
+  m_AnchoredPosition: {x: 0.38000488, y: 0.20019531}
   m_SizeDelta: {x: -1, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984469577
