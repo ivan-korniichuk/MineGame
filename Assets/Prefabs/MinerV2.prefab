@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4868200485723428038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8849708934011163186}
+  - component: {fileID: 8715647967200510874}
+  - component: {fileID: -1377360114536106220}
+  m_Layer: 0
+  m_Name: MinerV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8849708934011163186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868200485723428038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5286981932806491753}
+  - {fileID: 8159387259173223483}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8715647967200510874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868200485723428038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88c21fffe553d946919c9babda0dadd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _income: 3
+  _delay: 2
+  _randomDeltaDelay: 1.5
+  _player: {fileID: 0}
+--- !u!65 &-1377360114536106220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868200485723428038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.035848, y: 9.539721, z: 3.743134}
+  m_Center: {x: -0.66905737, y: 4.056555, z: -2.7096775}
+--- !u!1001 &5680617423631001986
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8849708934011163186}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0687017
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7206023
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+      propertyPath: m_Name
+      value: MinerGameItems-1-mainPlate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+--- !u!4 &5286981932806491753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6cc6c4e2941faca4b9e9bc0da53dce18, type: 3}
+  m_PrefabInstance: {fileID: 5680617423631001986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8552702955590212560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8849708934011163186}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08129823
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.7306023
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+      propertyPath: m_Name
+      value: MinerGameItems-2-Plate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+--- !u!4 &8159387259173223483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dab6124e2d64c424bb60d05a420f0db5, type: 3}
+  m_PrefabInstance: {fileID: 8552702955590212560}
+  m_PrefabAsset: {fileID: 0}
