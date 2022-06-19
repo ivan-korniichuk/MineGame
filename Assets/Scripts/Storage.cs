@@ -44,7 +44,7 @@ public class Storage : MonoBehaviour
         }
     }
 
-    public Item RenderItem(Item item)
+    public bool RenderItem(Item item)
     {
         if (ItemList.GetItemById(item.Id) != null)
         {
@@ -53,12 +53,13 @@ public class Storage : MonoBehaviour
             itemView.RenderButtonClicked += MinersRender;
             itemView.Render(item);
             _itemViews.Add(itemView);
+            return true;
         }
         else
         {
             Debug.Log("error ID: " + item.Id);
         }
-        return null;
+        return false;
     }
 
     private void DeleteEmptyItems()
@@ -72,24 +73,24 @@ public class Storage : MonoBehaviour
                 _itemViews.RemoveAt(i);
             }
         }
+        for (int i = 0; i < _inventory.Count; i++)
+        {
+            if(_inventory[i].Count <= 0)
+            {
+                _inventory.RemoveAt(i);
+            }
+        }
     }
 
     public void TrySetItem(int placeID, int itemId)
     {
-        var minerPlace = MinersStorage.GetMinerPlaceById(placeID);
-        if (minerPlace != null)
+        foreach (Item item in _inventory)
         {
-            if (minerPlace.IsRenderItem)
+            if (item.TryTakeItem(itemId) != null)
             {
-                foreach (Item item in _inventory)
-                {
-                    if (item.TryTakeItem(itemId) != null)
-                    {
-                        _minersStorage.SetItem(placeID);
-                        _minersStorage.DeleteRenderItems();
-                        return;
-                    }
-                }
+                _minersStorage.SetItem(placeID);
+                _minersStorage.DeleteRenderItems();
+                return;
             }
         }
     }
@@ -97,6 +98,16 @@ public class Storage : MonoBehaviour
     private void MinersRender(Item item)
     {
         _minersStorage.Render(item);
+    }
+
+    public void TryTakeItem(int placeId)
+    {
+        var item = MinersStorage.GetMinerPlaceById(placeId).DeleteItem(placeId);
+
+        if (item != null)
+        {
+            AddItem(ItemList.GetItemById(item.GetComponent<Miner>().Id));
+        }
     }
 
     public void AddItem(Item newItem)
@@ -109,8 +120,7 @@ public class Storage : MonoBehaviour
             }
         }
 
-        var createdItem = RenderItem(newItem);
-        if (createdItem != null)
+        if (RenderItem(newItem))
         {
             _inventory.Add(newItem);
         }

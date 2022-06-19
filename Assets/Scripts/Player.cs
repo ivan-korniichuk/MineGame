@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _money;
-    [SerializeField] private float _bitcoins;
+    [SerializeField] private float _sats;
     [SerializeField] private float _sellPrice;
     [SerializeField] private CameraMover _cameraMover;
     [SerializeField] private Storage _storage;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         _playerInput.Player.Touch.performed += ctx => OnTouch();
 
         MoneyChanged?.Invoke(_money);
-        BitcoinsChanged?.Invoke(_bitcoins);
+        BitcoinsChanged?.Invoke(_sats);
     }
 
     private void OnEnable()
@@ -47,7 +47,18 @@ public class Player : MonoBehaviour
         {
             if(hit.collider.TryGetComponent<Miner>(out Miner miner))
             {
-                _storage.TrySetItem(miner.PlaceId, miner.Id);
+                var minerPlace = MinersStorage.GetMinerPlaceById(miner.PlaceId);
+                if (minerPlace != null)
+                {
+                    if (minerPlace.IsRenderItem)
+                    {
+                        _storage.TrySetItem(miner.PlaceId, miner.Id);
+                    }
+                    else if (!minerPlace.IsRenderItem)
+                    {
+                        _storage.TryTakeItem(miner.PlaceId);
+                    }
+                }
             }
         }
     }
@@ -59,7 +70,7 @@ public class Player : MonoBehaviour
 
     public void AddBitcoins(float income)
     {
-        _bitcoins += income;
-        BitcoinsChanged?.Invoke(_bitcoins);
+        _sats += income;
+        BitcoinsChanged?.Invoke(_sats);
     }
 }

@@ -45,10 +45,14 @@ public class MinerPlace : MonoBehaviour
         }
     }
 
-    public GameObject DeleteItem()
+    public GameObject DeleteItem(int id)
     {
-        IsRenderItem = true;
-        Destroy(Item);
-        return Item;
+        if(Id == id)
+        {
+            IsRenderItem = true;
+            Destroy(Item);
+            return Item;
+        }
+        return null;
     }
 }

@@ -22,7 +22,7 @@ public class ItemList : MonoBehaviour
         {
             if (item.Id == id)
             {
-                return item;
+                return new Item(item);
             }
         }
         return null;
@@ -44,6 +44,15 @@ public class Item
     public int Count => _count;
     public GameObject GameObject => _gameObject;
     public event UnityAction<int> CountChanged;
+
+    public Item(Item item)
+    {
+        _label = item.Label;
+        _id = item.Id;
+        _icon = item.Icon;
+        _gameObject = item.GameObject;
+        _count = item.Count;
+    }
 
     public bool TryAddItem(Item item)
     {

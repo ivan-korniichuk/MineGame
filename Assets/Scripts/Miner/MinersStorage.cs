@@ -40,7 +40,7 @@ public class MinersStorage : MonoBehaviour
         }
     }
 
-    public void SetItem(int placeID/*, GameObject item*/)
+    public void SetItem(int placeID)
     {
         foreach (var minerPlace in _minerPlaces)
         {
@@ -58,7 +58,7 @@ public class MinersStorage : MonoBehaviour
         {
             if (minerPlace.IsRenderItem)
             {
-                minerPlace.DeleteItem();
+                minerPlace.DeleteItem(minerPlace.Id);
             }
         }
     }

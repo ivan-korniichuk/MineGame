@@ -19,12 +19,6 @@ public class ItemView : MonoBehaviour
     public event UnityAction<Item> RenderButtonClicked;
     public event UnityAction Emptied;
 
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(OnButtonClick);
-        _item.CountChanged += OnCountChanged;
-    }
-
     private void OnDisable()
     {
         _button.onClick.RemoveListener(OnButtonClick);
@@ -50,6 +44,9 @@ public class ItemView : MonoBehaviour
     public void Render(Item item)
     {
         _item = item;
+
+        _button.onClick.AddListener(OnButtonClick);
+        _item.CountChanged += OnCountChanged;
 
         _label.text = _item.Label;
         _count.text = _item.Count.ToString();
