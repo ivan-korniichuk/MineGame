@@ -11,6 +11,7 @@ public class Storage : MonoBehaviour
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private Button _button;
     [SerializeField] private MinersStorage _minersStorage;
+    [SerializeField] private GameObject _store;
 
     private bool _opened = false;
     private List<ItemView> _itemViews = new List<ItemView>();
@@ -36,7 +37,7 @@ public class Storage : MonoBehaviour
     private void OnButtonClick()
     {
         _opened = !_opened;
-        _itemContainer.SetActive(_opened);
+        _store.SetActive(_opened);
 
         if (!_opened)
         {

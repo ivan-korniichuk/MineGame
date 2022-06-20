@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Miner\Miner.cs" />
     <Compile Include="Assets\Scripts\UI\BitcoinView.cs" />
     <Compile Include="Assets\Scripts\Miner\MinersStorage.cs" />
+    <Compile Include="Assets\Scripts\Store.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />

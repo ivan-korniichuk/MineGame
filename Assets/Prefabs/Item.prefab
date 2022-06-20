@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _label: {fileID: 1215560688542052085}
-  _count: {fileID: 1215560689787681223}
+  _info: {fileID: 1215560689787681223}
   _icon: {fileID: 1215560690022272618}
   _button: {fileID: 1215560688964722604}
 --- !u!1 &1215560689787681217
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 1215560689787681222}
   - component: {fileID: 1215560689787681223}
   m_Layer: 5
-  m_Name: Count
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
