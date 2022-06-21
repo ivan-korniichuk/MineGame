@@ -42,6 +42,7 @@ public class Store : MonoBehaviour
         if (ItemList.GetItemById(item.Id) != null)
         {
             var itemView = Instantiate(_itemTemplate, _itemContainer.transform);
+            itemView.ButtonClicked += OnSellButtonClicked;
             itemView.Render(item, true);
             return true;
         }
@@ -50,5 +51,18 @@ public class Store : MonoBehaviour
             Debug.Log("error ID: " + item.Id);
         }
         return false;
+    }
+
+    private void OnSellButtonClicked(Item item)
+    {
+        TrySellItem(ItemList.GetItemById(item.Id));
+    }
+
+    private void TrySellItem(Item item)
+    {
+        if (item.Cost <= _player.Money)
+        {
+            _player.BuyItem(item);
+        }
     }
 }

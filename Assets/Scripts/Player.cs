@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private CameraMover _cameraMover;
     [SerializeField] private Storage _storage;
 
+    public float Money => _money;
+
     private PlayerInput _playerInput;
 
     public event UnityAction<float> MoneyChanged;
@@ -22,6 +24,12 @@ public class Player : MonoBehaviour
         _playerInput.Player.Swipe.performed += ctx => OnSwipe();
         _playerInput.Player.Touch.performed += ctx => OnTouch();
 
+        MoneyChanged?.Invoke(_money);
+        BitcoinsChanged?.Invoke(_sats);
+    }
+
+    private void Start()
+    {
         MoneyChanged?.Invoke(_money);
         BitcoinsChanged?.Invoke(_sats);
     }
@@ -68,9 +76,24 @@ public class Player : MonoBehaviour
         _cameraMover.OnSwipe(_playerInput.Player.Swipe.ReadValue<Vector2>());
     }
 
+    public void SellSats()
+    {
+        _money += _sats * _sellPrice;
+        _sats = 0;
+        MoneyChanged?.Invoke(_money);
+        BitcoinsChanged?.Invoke(_sats);
+    }
+
     public void AddBitcoins(float income)
     {
         _sats += income;
         BitcoinsChanged?.Invoke(_sats);
+    }
+
+    public void BuyItem(Item item)
+    {
+        _money -= item.Cost;
+        MoneyChanged?.Invoke(_money);
+        _storage.AddItem(item);
     }
 }

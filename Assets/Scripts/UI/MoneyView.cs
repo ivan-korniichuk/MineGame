@@ -26,6 +26,6 @@ public class MoneyView : ValueView
             i++;
         }*/
 
-        OnValueChanged(money.ToString());
+        OnValueChanged(money.ToString(format: "F1") + '$');
     }
 }

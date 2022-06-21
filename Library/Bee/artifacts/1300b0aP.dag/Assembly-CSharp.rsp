@@ -316,6 +316,7 @@
 "Assets/Scripts/Miner/MinersStorage.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Storage.cs"
+"Assets/Scripts/Store.cs"
 "Assets/Scripts/UI/BitcoinView.cs"
 "Assets/Scripts/UI/MoneyView.cs"
 "Assets/Scripts/UI/SafeArea.cs"

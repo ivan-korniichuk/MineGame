@@ -16,7 +16,7 @@ public class ItemView : MonoBehaviour
 
     public Item Item => _item;
 
-    public event UnityAction<Item> RenderButtonClicked;
+    public event UnityAction<Item> ButtonClicked;
     public event UnityAction Emptied;
 
     private void OnDestroy()
@@ -27,7 +27,7 @@ public class ItemView : MonoBehaviour
 
     private void OnButtonClick()
     {
-        RenderButtonClicked?.Invoke(_item);
+        ButtonClicked?.Invoke(_item);
     }
 
     public void OnCountChanged(int count)

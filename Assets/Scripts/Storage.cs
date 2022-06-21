@@ -51,7 +51,7 @@ public class Storage : MonoBehaviour
         {
             var itemView = Instantiate(_itemTemplate, _itemContainer.transform);
             itemView.Emptied += DeleteEmptyItems;
-            itemView.RenderButtonClicked += MinersRender;
+            itemView.ButtonClicked += OnRenderButtonClicked;
             itemView.Render(item);
             _itemViews.Add(itemView);
             return true;
@@ -70,7 +70,7 @@ public class Storage : MonoBehaviour
             if (_itemViews[i].Item.Count <= 0)
             {
                 _itemViews[i].Emptied -= DeleteEmptyItems;
-                _itemViews[i].RenderButtonClicked -= MinersRender;
+                _itemViews[i].ButtonClicked -= OnRenderButtonClicked;
                 _itemViews.RemoveAt(i);
             }
         }
@@ -96,7 +96,7 @@ public class Storage : MonoBehaviour
         }
     }
 
-    private void MinersRender(Item item)
+    private void OnRenderButtonClicked(Item item)
     {
         _minersStorage.Render(item);
     }
