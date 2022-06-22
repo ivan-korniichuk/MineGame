@@ -59,7 +59,8 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\UI\ValueView.cs" />
     <Compile Include="Assets\Scripts\UI\SafeArea.cs" />
-    <Compile Include="Assets\Scripts\Storage.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\PricePosition.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\Storage.cs" />
     <Compile Include="Assets\Scripts\UI\MoneyView.cs" />
     <Compile Include="Assets\Scripts\Miner\MinerPlace.cs" />
     <Compile Include="Assets\Scripts\CenterPoint.cs" />
@@ -67,10 +68,11 @@
     <Compile Include="Assets\Scripts\Miner\Miner.cs" />
     <Compile Include="Assets\Scripts\UI\BitcoinView.cs" />
     <Compile Include="Assets\Scripts\Miner\MinersStorage.cs" />
-    <Compile Include="Assets\Scripts\Store.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\Store.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\MenuScripts\CryptoExchange.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

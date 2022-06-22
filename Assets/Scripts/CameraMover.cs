@@ -17,6 +17,13 @@ public class CameraMover : MonoBehaviour
     private float _radius;
     private float _scaleDifference = 1;
 
+    private void Awake()
+    {
+        _camera = GetComponent<Camera>();
+        _scaleDifference = ((float)Screen.height / Screen.width) / ((float)_screenFormat.y / _screenFormat.x);
+        ChangeCenterPoint(_startCenterPoint);
+    }
+
     private void Update()
     {
         if (_camera.transform.rotation != Quaternion.Euler(_rotationX, _rotationY + 180, 0))
@@ -24,13 +31,6 @@ public class CameraMover : MonoBehaviour
             _camera.transform.position = new Vector3(Mathf.Cos(_rotationX * Mathf.Deg2Rad) * Mathf.Sin(_rotationY * Mathf.Deg2Rad) * _radius, Mathf.Sin(_rotationX * Mathf.Deg2Rad) * _radius, Mathf.Cos(_rotationX * Mathf.Deg2Rad) * Mathf.Cos(_rotationY * Mathf.Deg2Rad) * _radius) + _center.transform.position;
             _camera.transform.rotation = Quaternion.Euler(_rotationX, _rotationY + 180, 0);
         }
-    }
-
-    private void Awake()
-    {
-        _camera = GetComponent<Camera>();
-        _scaleDifference = ((float)Screen.height / Screen.width) / ((float)_screenFormat.y / _screenFormat.x);
-        ChangeCenterPoint(_startCenterPoint);
     }
 
     public void OnSwipe(Vector2 deltaSwipe)
