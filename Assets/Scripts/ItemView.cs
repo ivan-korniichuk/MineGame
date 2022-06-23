@@ -22,6 +22,7 @@ public class ItemView : MonoBehaviour
     private void OnDestroy()
     {
         _button.onClick.RemoveListener(OnButtonClick);
+        CryptoExchange.PriceChanged -= OnPriceChanged;
         _item.CountChanged -= OnCountChanged;
     }
 
@@ -41,7 +42,12 @@ public class ItemView : MonoBehaviour
         _info.text = count.ToString();
     }
 
-/**/
+    private void OnPriceChanged(float price)
+    {
+        _info.text = (_item.Cost * CryptoExchange.Price / 100000000 + 5).ToString(format: "F1") + '$';
+    }
+
+    /**/
     public void Render(Item item)
     {
         _item = item;
@@ -62,10 +68,9 @@ public class ItemView : MonoBehaviour
             _item = item;
 
             _button.onClick.AddListener(OnButtonClick);
-            _item.CountChanged += OnCountChanged;
-
+            CryptoExchange.PriceChanged += OnPriceChanged;
             _label.text = _item.Label;
-            _info.text = _item.Cost.ToString() + '$';
+            OnPriceChanged(CryptoExchange.Price);
             _icon.sprite = _item.Icon;
         }
     }

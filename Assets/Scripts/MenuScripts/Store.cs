@@ -34,6 +34,7 @@ public class Store : MonoBehaviour
     private void OnButtonClick()
     {
         _opened = !_opened;
+        _player.TouchScreenWork(!_opened);
         _store.SetActive(_opened);
     }
 
@@ -60,9 +61,10 @@ public class Store : MonoBehaviour
 
     private void TrySellItem(Item item)
     {
-        if (item.Cost <= _player.Money)
+        float price = item.Cost * CryptoExchange.Price / 100000000 + 5;
+        if (price <= _player.Money)
         {
-            _player.BuyItem(item);
+            _player.BuyItem(item, price);
         }
     }
 }

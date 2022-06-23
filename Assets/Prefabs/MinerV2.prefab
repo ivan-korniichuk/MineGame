@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88c21fffe553d946919c9babda0dadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _income: 3
+  _income: 2500
   _delay: 2
   _randomDeltaDelay: 1.5
   _player: {fileID: 0}

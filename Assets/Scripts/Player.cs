@@ -7,13 +7,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _money;
     [SerializeField] private float _sats;
-    [SerializeField] private float _sellPrice;
     [SerializeField] private CameraMover _cameraMover;
     [SerializeField] private Storage _storage;
 
     public float Money => _money;
+    
 
     private PlayerInput _playerInput;
+    private bool _work = true;
 
     public event UnityAction<float> MoneyChanged;
     public event UnityAction<float> BitcoinsChanged;
@@ -46,6 +47,8 @@ public class Player : MonoBehaviour
 
     private void OnTouch()
     {
+        if (!_work)
+            return;
         RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(_playerInput.Player.Touch.ReadValue<Vector2>());
@@ -73,12 +76,19 @@ public class Player : MonoBehaviour
 
     private void OnSwipe()
     {
+        if (!_work)
+            return;
         _cameraMover.OnSwipe(_playerInput.Player.Swipe.ReadValue<Vector2>());
     }
 
-    public void SellSats()
+    public void TouchScreenWork(bool work)
     {
-        _money += _sats * _sellPrice;
+        _work = work;
+    }
+
+    public void SellSats(float sellPrice)
+    {
+        _money += _sats * sellPrice / 100000000;
         _sats = 0;
         MoneyChanged?.Invoke(_money);
         BitcoinsChanged?.Invoke(_sats);
@@ -90,9 +100,9 @@ public class Player : MonoBehaviour
         BitcoinsChanged?.Invoke(_sats);
     }
 
-    public void BuyItem(Item item)
+    public void BuyItem(Item item, float price)
     {
-        _money -= item.Cost;
+        _money -= price;
         MoneyChanged?.Invoke(_money);
         _storage.AddItem(item);
     }

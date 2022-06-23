@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - BitcoinView
     - CameraMover
     - CenterPoint
+    - CryptoExchange
     - ItemList
     - ItemView
     - Miner
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - MinersStorage
     - MoneyView
     - Player
+    - PricePosition
     - SafeArea
     - Storage
     - Store
@@ -187,63 +189,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1920}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 2202}
     - Class: 114
-      Script: {instanceID: 2498}
+      Script: {instanceID: 2274}
     - Class: 114
-      Script: {instanceID: 2694}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2764}
+      Script: {instanceID: 2696}
     - Class: 114
-      Script: {instanceID: 2998}
+      Script: {instanceID: 2766}
     - Class: 114
-      Script: {instanceID: 3326}
+      Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 3384}
+      Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3456}
+      Script: {instanceID: 3386}
     - Class: 114
-      Script: {instanceID: 3494}
+      Script: {instanceID: 3458}
     - Class: 114
-      Script: {instanceID: 3538}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 4050}
+      Script: {instanceID: 3540}
     - Class: 114
-      Script: {instanceID: 4232}
+      Script: {instanceID: 4052}
     - Class: 114
-      Script: {instanceID: 4388}
+      Script: {instanceID: 4234}
     - Class: 114
-      Script: {instanceID: 4520}
+      Script: {instanceID: 4390}
     - Class: 114
-      Script: {instanceID: 4810}
+      Script: {instanceID: 4522}
     - Class: 114
-      Script: {instanceID: 5078}
+      Script: {instanceID: 4812}
     - Class: 114
-      Script: {instanceID: 5234}
+      Script: {instanceID: 5080}
     - Class: 114
-      Script: {instanceID: 5524}
+      Script: {instanceID: 5236}
     - Class: 114
-      Script: {instanceID: 5650}
+      Script: {instanceID: 5526}
     - Class: 114
-      Script: {instanceID: 6310}
+      Script: {instanceID: 5652}
     - Class: 114
-      Script: {instanceID: 6384}
+      Script: {instanceID: 6312}
     - Class: 114
-      Script: {instanceID: 6482}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 6794}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 6876}
+      Script: {instanceID: 6796}
     - Class: 114
-      Script: {instanceID: 7292}
+      Script: {instanceID: 6878}
     - Class: 114
-      Script: {instanceID: 7352}
+      Script: {instanceID: 7294}
     - Class: 114
-      Script: {instanceID: 7996}
+      Script: {instanceID: 7354}
     - Class: 114
-      Script: {instanceID: 8082}
+      Script: {instanceID: 7998}
     - Class: 114
-      Script: {instanceID: 8108}
+      Script: {instanceID: 8084}
+    - Class: 114
+      Script: {instanceID: 8110}
+    - Class: 114
+      Script: {instanceID: 8298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -269,7 +275,7 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 461dda184ee1a90656d102302fbf27a5
+      Hash: a204ca3ed33858004273b2c527f69d75
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -351,6 +357,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SafeArea
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PricePosition
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1209,6 +1221,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 7f2a8b834b74c274058137402389bb1b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CryptoExchange
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
