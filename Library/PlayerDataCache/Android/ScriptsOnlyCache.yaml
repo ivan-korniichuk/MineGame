@@ -7,6 +7,8 @@ ScriptsOnlyBuild:
     - CryptoExchange
     - ItemList
     - ItemView
+    - Menu
+    - MenuSwitcher
     - Miner
     - MinerPlace
     - MinersStorage
@@ -93,9 +95,39 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuSwitcher
+    methodName: SetMenuScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuSwitcher
+    methodName: SetMenuScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuSwitcher
+    methodName: SetMenuScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuSwitcher
+    methodName: CloseMenu
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: CameraMover
+    methodName: ChangeCenterPoint
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuSwitcher
+    methodName: SetMenuScreen
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -117,39 +149,12 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: Player
-    methodName: SellSats
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CameraMover
-    methodName: ChangeCenterPoint
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+    fullTypeName: MenuSwitcher
+    methodName: SetMenuScreen
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -189,67 +194,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1920}
     - Class: 114
-      Script: {instanceID: 2202}
+      Script: {instanceID: 2206}
     - Class: 114
-      Script: {instanceID: 2274}
+      Script: {instanceID: 2278}
     - Class: 114
-      Script: {instanceID: 2500}
+      Script: {instanceID: 2512}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 2710}
     - Class: 114
-      Script: {instanceID: 2766}
+      Script: {instanceID: 2780}
     - Class: 114
-      Script: {instanceID: 3000}
+      Script: {instanceID: 3014}
     - Class: 114
-      Script: {instanceID: 3328}
+      Script: {instanceID: 3344}
     - Class: 114
-      Script: {instanceID: 3386}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 3458}
+      Script: {instanceID: 3476}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 3540}
+      Script: {instanceID: 3558}
     - Class: 114
-      Script: {instanceID: 4052}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4234}
+      Script: {instanceID: 4256}
     - Class: 114
-      Script: {instanceID: 4390}
+      Script: {instanceID: 4412}
     - Class: 114
-      Script: {instanceID: 4522}
+      Script: {instanceID: 4544}
     - Class: 114
-      Script: {instanceID: 4812}
+      Script: {instanceID: 4836}
     - Class: 114
-      Script: {instanceID: 5080}
+      Script: {instanceID: 5112}
     - Class: 114
-      Script: {instanceID: 5236}
+      Script: {instanceID: 5270}
     - Class: 114
-      Script: {instanceID: 5526}
+      Script: {instanceID: 5562}
     - Class: 114
-      Script: {instanceID: 5652}
+      Script: {instanceID: 5688}
     - Class: 114
-      Script: {instanceID: 6312}
+      Script: {instanceID: 6352}
     - Class: 114
-      Script: {instanceID: 6386}
+      Script: {instanceID: 6428}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6528}
     - Class: 114
-      Script: {instanceID: 6796}
+      Script: {instanceID: 6848}
     - Class: 114
-      Script: {instanceID: 6878}
+      Script: {instanceID: 6932}
     - Class: 114
-      Script: {instanceID: 7294}
+      Script: {instanceID: 7352}
     - Class: 114
-      Script: {instanceID: 7354}
+      Script: {instanceID: 7412}
     - Class: 114
-      Script: {instanceID: 7998}
+      Script: {instanceID: 8058}
     - Class: 114
-      Script: {instanceID: 8084}
+      Script: {instanceID: 8144}
     - Class: 114
-      Script: {instanceID: 8110}
+      Script: {instanceID: 8170}
     - Class: 114
-      Script: {instanceID: 8298}
+      Script: {instanceID: 8360}
+    - Class: 114
+      Script: {instanceID: 26560}
+    - Class: 114
+      Script: {instanceID: 36644}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -413,7 +422,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 52a3bc40d14919383fafced9e6b7f157
+      Hash: 9b72da5f5aef5f872933b5ed2845480f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Storage
@@ -977,7 +986,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 75522823ecec18b212c77e25d81dbf15
+      Hash: bae435784134d736bd1444e263d7a37d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Store
@@ -1223,7 +1232,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 7f2a8b834b74c274058137402389bb1b
+      Hash: bc39c810b6eef9c20307b13319a8337a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CryptoExchange
@@ -1311,7 +1320,19 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e7183747c1c8b66814b7c72eb7c1cb0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuSwitcher
+  - hash:
+      serializedVersion: 2
+      Hash: c17f02c9b86013316aa166a31e0118b1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity/UnityGames/ShelveV2.apk
+  playerPath: D:/Unity/UnityGames/ExchMiner.apk

@@ -52,7 +52,7 @@ public class MinersStorage : MonoBehaviour
         }
     }
 
-    public void DeleteRenderItems()
+    public static void DeleteRenderItems()
     {
         foreach (var minerPlace in _minerPlaces)
         {

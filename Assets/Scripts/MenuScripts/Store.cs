@@ -8,11 +8,7 @@ public class Store : MonoBehaviour
     [SerializeField] private List<Item> _storeItems;
     [SerializeField] private ItemView _itemTemplate;
     [SerializeField] private Player _player;
-    [SerializeField] private Button _button;
     [SerializeField] private GameObject _itemContainer;
-    [SerializeField] private GameObject _store;
-
-    private bool _opened = false;
 
     private void Start()
     {
@@ -20,22 +16,6 @@ public class Store : MonoBehaviour
         {
             RenderItem(item);
         }
-    }
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(OnButtonClick);
-    }
-
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(OnButtonClick);
-    }
-
-    private void OnButtonClick()
-    {
-        _opened = !_opened;
-        _player.TouchScreenWork(!_opened);
-        _store.SetActive(_opened);
     }
 
     public bool RenderItem(Item item)

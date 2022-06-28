@@ -30,7 +30,7 @@ public class BitcoinView : ValueView
         if(i > 0)
             i--;
 
-        bitcoins /= (_roundCounts[i] + 100f);
+        bitcoins /= (_roundCounts[i] * 100f);
 
         OnValueChanged(bitcoins.ToString(format: "F2") + _roundNames[i]);
     }

@@ -9,11 +9,8 @@ public class Storage : MonoBehaviour
     [SerializeField] private List<Item> _inventory;
     [SerializeField] private ItemView _itemTemplate;
     [SerializeField] private GameObject _itemContainer;
-    [SerializeField] private Button _button;
     [SerializeField] private MinersStorage _minersStorage;
-    [SerializeField] private GameObject _store;
 
-    private bool _opened = false;
     private List<ItemView> _itemViews = new List<ItemView>();
 
     private void Start()
@@ -21,27 +18,6 @@ public class Storage : MonoBehaviour
         foreach (var item in _inventory)
         {
             RenderItem(item);
-        }
-    }
-
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(OnButtonClick);
-    }
-
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(OnButtonClick);
-    }
-
-    private void OnButtonClick()
-    {
-        _opened = !_opened;
-        _store.SetActive(_opened);
-
-        if (!_opened)
-        {
-            _minersStorage.DeleteRenderItems();
         }
     }
 
@@ -90,7 +66,7 @@ public class Storage : MonoBehaviour
             if (item.TryTakeItem(itemId) != null)
             {
                 _minersStorage.SetItem(placeID);
-                _minersStorage.DeleteRenderItems();
+                MinersStorage.DeleteRenderItems();
                 return;
             }
         }

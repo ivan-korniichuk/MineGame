@@ -320,6 +320,8 @@
 "Assets/Scripts/Miner/MinersStorage.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/UI/BitcoinView.cs"
+"Assets/Scripts/UI/Menu.cs"
+"Assets/Scripts/UI/MenuSwitcher.cs"
 "Assets/Scripts/UI/MoneyView.cs"
 "Assets/Scripts/UI/SafeArea.cs"
 "Assets/Scripts/UI/ValueView.cs"

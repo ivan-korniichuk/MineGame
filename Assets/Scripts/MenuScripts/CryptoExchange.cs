@@ -15,18 +15,15 @@ public class CryptoExchange : MonoBehaviour
     [SerializeField] private PricePosition _pricePositionTemplate;
     [SerializeField] private float _timePeriod = 5;
     [SerializeField] private TMP_Text _cost;
-    [SerializeField] private Button _button; 
-    [SerializeField] private Button _exitButton;
     [SerializeField] private Button _changeButton;
-    [SerializeField] private GameObject _menu;
     [SerializeField] private Player _player;
 
     private float _timeAfterLastUpdate = 0;
     private Vector2 _minAnchor = new Vector2(0, 0);
     private Vector2 _maxAnchor = new Vector2(1, 1);
-    private bool _opened = false;
 
     public static float Price { get; private set; } = 0;
+    public static float AvPrice { get; private set; } = 0;
     public static event UnityAction<float> PriceChanged;
 
     private void Awake()
@@ -36,20 +33,14 @@ public class CryptoExchange : MonoBehaviour
             _days = 2;
             Debug.Log("error CryptoExchange days count");
         }
-/*        _minAnchor = rectTransform.anchorMin;
-        _maxAnchor = rectTransform.anchorMax;*/
     }
     private void OnEnable()
     {
-        _button.onClick.AddListener(OnButtonClick);
-        _exitButton.onClick.AddListener(OnButtonClick);
         _changeButton.onClick.AddListener(OnExchange);
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(OnButtonClick);
-        _exitButton.onClick.RemoveListener(OnButtonClick);
         _changeButton.onClick.RemoveListener(OnExchange);
     }
 
@@ -64,6 +55,8 @@ public class CryptoExchange : MonoBehaviour
         {
             SetNewCycle();
         }
+        AvPrice = Price;
+        PriceChanged?.Invoke(AvPrice);
     }
 
     private void Update()
@@ -74,13 +67,6 @@ public class CryptoExchange : MonoBehaviour
             _timeAfterLastUpdate = 0;
             SetNewCycle();
         }
-    }
-
-    private void OnButtonClick()
-    {
-        _opened = !_opened;
-        _player.TouchScreenWork(!_opened);
-        _menu.SetActive(_opened);
     }
 
     private void OnExchange()
@@ -126,7 +112,9 @@ public class CryptoExchange : MonoBehaviour
 
         SetNewRandomPrice(_positions[_positions.Count - 2], _positions[_positions.Count - 1]);
         Price = _positions[_positions.Count - 1].Price;
-        PriceChanged?.Invoke(Price);
+        AvPrice += Price;
+        AvPrice /= 2;
+        PriceChanged?.Invoke(AvPrice);
         _cost.text = ('$' + Price.ToString(format:"F2"));
         SetMaxPrice();
         SetPricePositions();
@@ -134,7 +122,7 @@ public class CryptoExchange : MonoBehaviour
 
     private void SetNewRandomPrice(PricePosition previousPricePosition, PricePosition thisPricePosition)
     {
-        float randomPriceChange = Random.Range(-0.2f * previousPricePosition.Price, 0.2f * (_maxPrice - previousPricePosition.Price));
+        float randomPriceChange = Random.Range(-0.15f * previousPricePosition.Price, 0.15f * (_maxPrice - previousPricePosition.Price));
         thisPricePosition.ChangePrice(Mathf.Clamp(previousPricePosition.Price + randomPriceChange, 0 , _maxPrice));
 
         SetPricePosition(thisPricePosition);

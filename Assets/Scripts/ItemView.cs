@@ -47,31 +47,22 @@ public class ItemView : MonoBehaviour
         _info.text = (_item.Cost * CryptoExchange.Price / 100000000 + 5).ToString(format: "F1") + '$';
     }
 
-    /**/
-    public void Render(Item item)
+    public void Render(Item item, bool isStoreItem = false)
     {
         _item = item;
 
         _button.onClick.AddListener(OnButtonClick);
-        _item.CountChanged += OnCountChanged;
-
         _label.text = _item.Label;
-        _info.text = _item.Count.ToString();
         _icon.sprite = _item.Icon;
-    }
-/**/
-
-    public void Render(Item item, bool isStoreItem)
-    {
         if (isStoreItem)
         {
-            _item = item;
-
-            _button.onClick.AddListener(OnButtonClick);
             CryptoExchange.PriceChanged += OnPriceChanged;
-            _label.text = _item.Label;
-            OnPriceChanged(CryptoExchange.Price);
-            _icon.sprite = _item.Icon;
+            OnPriceChanged(CryptoExchange.AvPrice);
+        }
+        else
+        {
+            _item.CountChanged += OnCountChanged;
+            OnCountChanged(_item.Count);
         }
     }
 }
