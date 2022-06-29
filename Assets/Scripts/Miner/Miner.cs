@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Miner : MonoBehaviour
+public class Miner : Item
 {
     [SerializeField] private float _income;
     [SerializeField] private float _delay;
     [SerializeField] private float _randomDeltaDelay;
     [SerializeField] private Player _player;
+    [SerializeField] private Core _core;
 
     private float _timeAfterLastPayment = 0;
 
-    public int Id { get; private set; }
     public int PlaceId { get; private set; }
+
+    public Miner(Item item) : base(item)
+    {
+    }
 
     private void Update()
     {
@@ -26,12 +30,6 @@ public class Miner : MonoBehaviour
         }
     }
 
-/*    public void Init(int id, int placedId, Player player)
-    {
-        Id = id;
-        PlaceId = placedId;
-        _player = player;
-    }*/
     public void Init(int id, int placedId)
     {
         Id = id;

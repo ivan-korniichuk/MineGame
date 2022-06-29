@@ -22,9 +22,9 @@ public class MinerPlace : MonoBehaviour
 
     public void Render(Item item, Material renderMaterial)
     {
-        Item = Instantiate(item.GameObject, transform.position, Quaternion.identity);
+        //Item = Instantiate(item.GameObject, transform.position, Quaternion.identity);
         Item.GetComponent<Miner>().enabled = false;
-        Item.GetComponent<Miner>().Init(item.Id, Id);
+        Item.GetComponent<Miner>().Init(item.ItemId, Id);
         IsRenderItem = true;
 
         foreach (var meshRenderer in Item.GetComponentsInChildren<MeshRenderer>())

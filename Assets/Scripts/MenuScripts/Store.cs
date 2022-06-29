@@ -20,7 +20,7 @@ public class Store : MonoBehaviour
 
     public bool RenderItem(Item item)
     {
-        if (ItemList.GetItemById(item.Id) != null)
+        if (ItemList.GetItemById(item.ItemId) != null)
         {
             var itemView = Instantiate(_itemTemplate, _itemContainer.transform);
             itemView.ButtonClicked += OnSellButtonClicked;
@@ -29,14 +29,14 @@ public class Store : MonoBehaviour
         }
         else
         {
-            Debug.Log("error ID: " + item.Id);
+            Debug.Log("error ID: " + item.ItemId);
         }
         return false;
     }
 
     private void OnSellButtonClicked(Item item)
     {
-        TrySellItem(ItemList.GetItemById(item.Id));
+        TrySellItem(ItemList.GetItemById(item.ItemId));
     }
 
     private void TrySellItem(Item item)

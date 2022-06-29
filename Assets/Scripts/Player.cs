@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
                 {
                     if (minerPlace.IsRenderItem)
                     {
-                        _storage.TrySetItem(miner.PlaceId, miner.Id);
+                        _storage.TrySetItem(miner.PlaceId, miner.ItemId);
                     }
                     else if (!minerPlace.IsRenderItem)
                     {
